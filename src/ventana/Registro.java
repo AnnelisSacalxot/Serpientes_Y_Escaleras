@@ -32,6 +32,7 @@ public class Registro extends javax.swing.JFrame {
         jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabelTitulo.setFont(new java.awt.Font("Abyssinica SIL", 2, 24)); // NOI18N
@@ -42,6 +43,11 @@ public class Registro extends javax.swing.JFrame {
         jButtonRegresar.setBackground(new java.awt.Color(255, 255, 0));
         jButtonRegresar.setForeground(new java.awt.Color(0, 0, 0));
         jButtonRegresar.setText("Regresar");
+        jButtonRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRegresarActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 550, 110, 40));
 
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/jugar.jpg"))); // NOI18N
@@ -49,6 +55,14 @@ public class Registro extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegresarActionPerformed
+        // Instanciamos la ventana anterior para regresar a lo principal
+        
+        VentanaPrincipal vistaPrincipal = new VentanaPrincipal();
+        vistaPrincipal.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButtonRegresarActionPerformed
 
     /**
      * @param args the command line arguments

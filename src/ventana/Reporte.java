@@ -44,13 +44,25 @@ public class Reporte extends javax.swing.JFrame {
         jButtonRegresar.setFont(new java.awt.Font("Abyssinica SIL", 2, 18)); // NOI18N
         jButtonRegresar.setForeground(new java.awt.Color(0, 0, 0));
         jButtonRegresar.setText("Regresar");
+        jButtonRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRegresarActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(559, 400, 140, -1));
 
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/estadistica.jpg"))); // NOI18N
-        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
+        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-2, 0, 740, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegresarActionPerformed
+        // Instanceamos la  VentanaPrincipal
+        VentanaPrincipal vistaPrincipal = new VentanaPrincipal();
+        vistaPrincipal.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButtonRegresarActionPerformed
 
     /**
      * @param args the command line arguments

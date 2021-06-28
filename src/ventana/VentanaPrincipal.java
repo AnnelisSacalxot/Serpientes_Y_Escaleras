@@ -30,6 +30,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jButtonSalir = new javax.swing.JButton();
+        jPanelFondoTablero = new javax.swing.JPanel();
+        jButtonJugar = new javax.swing.JButton();
+        jButtonReportes = new javax.swing.JButton();
         jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -47,6 +50,31 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 31, 120, 40));
 
+        jPanelFondoTablero.setBackground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(jPanelFondoTablero, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 610, 360));
+
+        jButtonJugar.setBackground(new java.awt.Color(102, 255, 51));
+        jButtonJugar.setFont(new java.awt.Font("Abyssinica SIL", 2, 18)); // NOI18N
+        jButtonJugar.setForeground(new java.awt.Color(0, 0, 0));
+        jButtonJugar.setText("Comenzar a jugar");
+        jButtonJugar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonJugarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonJugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 200, 40));
+
+        jButtonReportes.setBackground(new java.awt.Color(102, 255, 51));
+        jButtonReportes.setFont(new java.awt.Font("Abyssinica SIL", 2, 18)); // NOI18N
+        jButtonReportes.setForeground(new java.awt.Color(0, 0, 0));
+        jButtonReportes.setText("Reportes y Estadísticas");
+        jButtonReportes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonReportesActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonReportes, new org.netbeans.lib.awtextra.AbsoluteConstraints(507, 551, 240, 40));
+
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.jpg"))); // NOI18N
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 930, -1));
 
@@ -58,6 +86,29 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         
         System.exit(0);
     }//GEN-LAST:event_jButtonSalirActionPerformed
+
+    private void jButtonJugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonJugarActionPerformed
+        // Llamaré al JFrame de Registro para que le salga al ususario la pestaña 
+        //correspondiente 
+        
+        Registro vistaRegistro = new Registro();
+        vistaRegistro.setVisible(true);
+        
+ /*
+ * Dispose nos sirve para que cuando salga esta ventana secundaria la centana principal 
+*desaparezca mientras estemos en esta, para mejor orden en vista y no se vea amontonado
+ */
+        this.dispose();
+    }//GEN-LAST:event_jButtonJugarActionPerformed
+
+    private void jButtonReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonReportesActionPerformed
+        // Llamaré al JFrame de Reporte para que al orprimir el botón salga la pestaña
+        //correspondiente 
+        
+        Reporte vistaReporte = new Reporte();
+        vistaReporte.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButtonReportesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -95,7 +146,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonJugar;
+    private javax.swing.JButton jButtonReportes;
     private javax.swing.JButton jButtonSalir;
     private javax.swing.JLabel jLabelFondo;
+    private javax.swing.JPanel jPanelFondoTablero;
     // End of variables declaration//GEN-END:variables
 }
