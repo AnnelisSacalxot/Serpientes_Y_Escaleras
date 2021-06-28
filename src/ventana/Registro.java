@@ -16,6 +16,7 @@ public class Registro extends javax.swing.JFrame {
      */
     public Registro() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -29,6 +30,13 @@ public class Registro extends javax.swing.JFrame {
 
         jLabelTitulo = new javax.swing.JLabel();
         jButtonRegresar = new javax.swing.JButton();
+        jLabelNombre = new javax.swing.JLabel();
+        jLabelID = new javax.swing.JLabel();
+        jLabelApellido = new javax.swing.JLabel();
+        jLabelPartidasP = new javax.swing.JLabel();
+        jTextFieldCampoID = new javax.swing.JTextField();
+        jTextFieldCampoNombre = new javax.swing.JTextField();
+        jTextFieldCampoApellido = new javax.swing.JTextField();
         jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -49,6 +57,35 @@ public class Registro extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButtonRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 550, 110, 40));
+
+        jLabelNombre.setBackground(new java.awt.Color(0, 0, 0));
+        jLabelNombre.setFont(new java.awt.Font("Abyssinica SIL", 2, 18)); // NOI18N
+        jLabelNombre.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelNombre.setText("Nombre:");
+        getContentPane().add(jLabelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 80, 30));
+
+        jLabelID.setFont(new java.awt.Font("Abyssinica SIL", 2, 18)); // NOI18N
+        jLabelID.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelID.setText("ID:");
+        getContentPane().add(jLabelID, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
+
+        jLabelApellido.setFont(new java.awt.Font("Abyssinica SIL", 2, 18)); // NOI18N
+        jLabelApellido.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelApellido.setText("Apellido:");
+        getContentPane().add(jLabelApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 80, 40));
+
+        jLabelPartidasP.setFont(new java.awt.Font("Abyssinica SIL", 2, 18)); // NOI18N
+        jLabelPartidasP.setForeground(new java.awt.Color(0, 0, 0));
+        getContentPane().add(jLabelPartidasP, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, -1, -1));
+
+        jTextFieldCampoID.setBackground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(jTextFieldCampoID, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 140, -1));
+
+        jTextFieldCampoNombre.setBackground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(jTextFieldCampoNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 140, -1));
+
+        jTextFieldCampoApellido.setBackground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(jTextFieldCampoApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 250, 140, -1));
 
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/jugar.jpg"))); // NOI18N
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 619));
@@ -101,7 +138,14 @@ public class Registro extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonRegresar;
+    private javax.swing.JLabel jLabelApellido;
     private javax.swing.JLabel jLabelFondo;
+    private javax.swing.JLabel jLabelID;
+    private javax.swing.JLabel jLabelNombre;
+    private javax.swing.JLabel jLabelPartidasP;
     private javax.swing.JLabel jLabelTitulo;
+    private javax.swing.JTextField jTextFieldCampoApellido;
+    private javax.swing.JTextField jTextFieldCampoID;
+    private javax.swing.JTextField jTextFieldCampoNombre;
     // End of variables declaration//GEN-END:variables
 }

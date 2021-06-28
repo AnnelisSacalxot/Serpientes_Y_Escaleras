@@ -33,6 +33,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jPanelFondoTablero = new javax.swing.JPanel();
         jButtonJugar = new javax.swing.JButton();
         jButtonReportes = new javax.swing.JButton();
+        jLabelDado = new javax.swing.JLabel();
+        jButtonDado = new javax.swing.JButton();
         jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -75,6 +77,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonReportes, new org.netbeans.lib.awtextra.AbsoluteConstraints(507, 551, 240, 40));
 
+        jLabelDado.setFont(new java.awt.Font("Abyssinica SIL", 2, 18)); // NOI18N
+        jLabelDado.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelDado.setText("Tirar el dado");
+        getContentPane().add(jLabelDado, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 160, 140, 30));
+
+        jButtonDado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/dado.jpg"))); // NOI18N
+        jButtonDado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonDadoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonDado, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 210, 120, 110));
+
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.jpg"))); // NOI18N
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 930, -1));
 
@@ -109,6 +124,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         vistaReporte.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButtonReportesActionPerformed
+
+    private void jButtonDadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonDadoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -146,9 +165,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonDado;
     private javax.swing.JButton jButtonJugar;
     private javax.swing.JButton jButtonReportes;
     private javax.swing.JButton jButtonSalir;
+    private javax.swing.JLabel jLabelDado;
     private javax.swing.JLabel jLabelFondo;
     private javax.swing.JPanel jPanelFondoTablero;
     // End of variables declaration//GEN-END:variables
