@@ -5,12 +5,12 @@
  */
 package ventana;
 
-import Manejadores.CreacionTablero;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import ventana.VentanaPrincipal;
 
 /**
  *
@@ -188,8 +188,7 @@ public class Registro extends javax.swing.JFrame {
     private void jButtonJugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonJugarActionPerformed
         // Una vez leído el archivo se llama al metodo apra crear el tablero
         
-        CreacionTablero tablero = new CreacionTablero();
-        tablero.iniciarTablero();
+        
     }//GEN-LAST:event_jButtonJugarActionPerformed
 
     /**

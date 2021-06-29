@@ -3,8 +3,10 @@
 *una cierta funcionalidad para poder jugar 
  */
 package ventana;
+import java.awt.Color;
+import java.util.Random;
+import javax.swing.JButton;
 
-import javax.swing.JToggleButton;
 
 /**
  *
@@ -20,8 +22,65 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         
         //esto es para que aparezca en medio la ventana y no corrido hacia un lado
         this.setLocationRelativeTo(null);
+    }
+    
         
-        iniciarTablero();
+      //Características que tendrán los botones generalmente
+    
+    int filas = 6;
+    int columnas = 8;
+    int largoBoton = 80;
+    int anchoBoton = 80;
+    int ejeX = 20;
+    int ejeY = 20;
+    
+    
+  /*
+ * Se creara un arreglo bidimensional para crear el terreno
+ * donde iran los animales y plantas, para esto se utilizará botones
+ *  con JButton
+ */
+    
+    public JButton [][] Casillas = new JButton[filas][columnas];
+    
+    public void creacionCasillas(){
+        
+       Random tiro = new Random();
+        
+        Casillas = new JButton[filas][columnas];
+        
+        for (int fila = 0; fila < filas; fila++) {
+            for (int columna = 0; columna < columnas; columna++) {
+                
+                /** 
+                 * Empieza a llamar el conteo de filas y columnas
+                 */
+                
+                Casillas [fila][columna] = new JButton(); 
+                Casillas [fila][columna].setBounds(ejeX,ejeY,largoBoton,anchoBoton); 
+                jPanelTablero.add(Casillas [fila][columna]);
+                
+                /**
+                 * @param Casillas, se usara esta sentencia para decidir los colores
+                 * que se tendrá en cada cuadro o casilla
+                 */
+                
+                
+                if ((fila+columna)<=40) {
+                   
+                    Casillas [fila][columna].setBackground(Color.GREEN);
+                } else if ((fila+columna)<=41+75) {
+                    Casillas [fila][columna].setBackground(Color.BLUE);
+                } else if ((fila+columna)<=76+100) {
+                    Casillas [fila][columna].setBackground(Color.YELLOW);
+                }
+                
+                ejeX += 80;
+            }
+            ejeY += 80;
+            ejeX =20;
+        }
+        
     }
 
     /**
@@ -34,8 +93,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jButtonSalir = new javax.swing.JButton();
-        jPanelFondoTablero = new javax.swing.JPanel();
-        jButtonJugar = new javax.swing.JButton();
+        jButtonRegistrarse = new javax.swing.JButton();
         jButtonReportes = new javax.swing.JButton();
         jLabelDado = new javax.swing.JLabel();
         jLabelTituloPrincipal = new javax.swing.JLabel();
@@ -44,6 +102,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jButtonDado = new javax.swing.JButton();
         jButtonFichaRojo = new javax.swing.JButton();
         jButtonFichaAzul = new javax.swing.JButton();
+        jPanelTablero = new javax.swing.JPanel();
+        jButtonJugar = new javax.swing.JButton();
         jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -61,19 +121,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 31, 120, 40));
 
-        jPanelFondoTablero.setBackground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(jPanelFondoTablero, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 610, 360));
-
-        jButtonJugar.setBackground(new java.awt.Color(102, 255, 51));
-        jButtonJugar.setFont(new java.awt.Font("Abyssinica SIL", 2, 18)); // NOI18N
-        jButtonJugar.setForeground(new java.awt.Color(0, 0, 0));
-        jButtonJugar.setText("Comenzar a jugar");
-        jButtonJugar.addActionListener(new java.awt.event.ActionListener() {
+        jButtonRegistrarse.setBackground(new java.awt.Color(102, 255, 51));
+        jButtonRegistrarse.setFont(new java.awt.Font("Abyssinica SIL", 2, 18)); // NOI18N
+        jButtonRegistrarse.setForeground(new java.awt.Color(0, 0, 0));
+        jButtonRegistrarse.setText("Registro");
+        jButtonRegistrarse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonJugarActionPerformed(evt);
+                jButtonRegistrarseActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonJugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 200, 40));
+        getContentPane().add(jButtonRegistrarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 200, 40));
 
         jButtonReportes.setBackground(new java.awt.Color(102, 255, 51));
         jButtonReportes.setFont(new java.awt.Font("Abyssinica SIL", 2, 18)); // NOI18N
@@ -116,6 +173,18 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jButtonFichaAzul.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/azul.jpg"))); // NOI18N
         getContentPane().add(jButtonFichaAzul, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 430, 70, 80));
 
+        jPanelTablero.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelTablero.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(jPanelTablero, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 570, 380));
+
+        jButtonJugar.setText("Jugar");
+        jButtonJugar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonJugarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonJugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 80, 100, -1));
+
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.jpg"))); // NOI18N
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 930, -1));
 
@@ -128,7 +197,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jButtonSalirActionPerformed
 
-    private void jButtonJugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonJugarActionPerformed
+    private void jButtonRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegistrarseActionPerformed
         // Llamaré al JFrame de Registro para que le salga al ususario la pestaña 
         //correspondiente 
         
@@ -140,7 +209,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 *desaparezca mientras estemos en esta, para mejor orden en vista y no se vea amontonado
  */
         this.dispose();
-    }//GEN-LAST:event_jButtonJugarActionPerformed
+    }//GEN-LAST:event_jButtonRegistrarseActionPerformed
 
     private void jButtonReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonReportesActionPerformed
         // Llamaré al JFrame de Reporte para que al orprimir el botón salga la pestaña
@@ -154,6 +223,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void jButtonDadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDadoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonDadoActionPerformed
+
+    private void jButtonJugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonJugarActionPerformed
+        // Aparición del tablero al presionar este boton 
+        this.creacionCasillas();
+    }//GEN-LAST:event_jButtonJugarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -186,38 +260,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new VentanaPrincipal().setVisible(true);
+             
             }
-        });
-    }
+        }); 
+    } 
     
     
-    
-    private int filas = 6;
-    private int columnas = 8;
-    private int largoBoton = 140;
-    private int anchoBoton = 60;
-    private int x = 20;
-    private int y = 20;
-    
-     public JToggleButton [] [] creacionTablero = new JToggleButton [filas] [columnas];
-    private Object jPanelFondoTablero;
-    
-    //Creamos nuestro método para poder hacer el tablero
-    
-    public void iniciarTablero() {
-        
-        creacionTablero = new JToggleButton [filas] [columnas];
-        
-        //Utilizaremos los ciclos for para la construcción
-        
-        for (int i = 0; i < filas; i++) {
-            for (int j = 0; j < 10; j++) {
-                creacionTablero  [i] [j] = new JToggleButton(); 
-                creacionTablero  [i] [j] .setBounds(x, y, largoBoton, anchoBoton);
-                jPanelFondoTablero.add(creacionTablero [i] [j]);
-            }
-        }
-    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonDado;
@@ -226,11 +275,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton jButtonFichaRojo;
     private javax.swing.JButton jButtonFichaVerde;
     private javax.swing.JButton jButtonJugar;
+    private javax.swing.JButton jButtonRegistrarse;
     private javax.swing.JButton jButtonReportes;
     private javax.swing.JButton jButtonSalir;
     private javax.swing.JLabel jLabelDado;
     private javax.swing.JLabel jLabelFondo;
     private javax.swing.JLabel jLabelTituloPrincipal;
-    private javax.swing.JPanel jPanelFondoTablero;
+    private javax.swing.JPanel jPanelTablero;
     // End of variables declaration//GEN-END:variables
 }
