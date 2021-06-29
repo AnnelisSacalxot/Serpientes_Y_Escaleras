@@ -4,6 +4,8 @@
  */
 package ventana;
 
+import javax.swing.JToggleButton;
+
 /**
  *
  * @author annelis
@@ -18,6 +20,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         
         //esto es para que aparezca en medio la ventana y no corrido hacia un lado
         this.setLocationRelativeTo(null);
+        
+        iniciarTablero();
     }
 
     /**
@@ -184,6 +188,35 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 new VentanaPrincipal().setVisible(true);
             }
         });
+    }
+    
+    
+    
+    private int filas = 6;
+    private int columnas = 8;
+    private int largoBoton = 140;
+    private int anchoBoton = 60;
+    private int x = 20;
+    private int y = 20;
+    
+     public JToggleButton [] [] creacionTablero = new JToggleButton [filas] [columnas];
+    private Object jPanelFondoTablero;
+    
+    //Creamos nuestro método para poder hacer el tablero
+    
+    public void iniciarTablero() {
+        
+        creacionTablero = new JToggleButton [filas] [columnas];
+        
+        //Utilizaremos los ciclos for para la construcción
+        
+        for (int i = 0; i < filas; i++) {
+            for (int j = 0; j < 10; j++) {
+                creacionTablero  [i] [j] = new JToggleButton(); 
+                creacionTablero  [i] [j] .setBounds(x, y, largoBoton, anchoBoton);
+                jPanelFondoTablero.add(creacionTablero [i] [j]);
+            }
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

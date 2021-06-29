@@ -189,6 +189,7 @@ public class Registro extends javax.swing.JFrame {
         // Una vez leído el archivo se llama al metodo apra crear el tablero
         
         CreacionTablero tablero = new CreacionTablero();
+        tablero.iniciarTablero();
     }//GEN-LAST:event_jButtonJugarActionPerformed
 
     /**
