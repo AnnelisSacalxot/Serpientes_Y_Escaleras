@@ -37,6 +37,11 @@ public class Registro extends javax.swing.JFrame {
         jTextFieldCampoID = new javax.swing.JTextField();
         jTextFieldCampoNombre = new javax.swing.JTextField();
         jTextFieldCampoApellido = new javax.swing.JTextField();
+        jLabelAviso = new javax.swing.JLabel();
+        jButtonSeleccion = new javax.swing.JButton();
+        jScrollPaneMostrarDatos = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jButtonJugar = new javax.swing.JButton();
         jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -86,6 +91,31 @@ public class Registro extends javax.swing.JFrame {
 
         jTextFieldCampoApellido.setBackground(new java.awt.Color(255, 255, 255));
         getContentPane().add(jTextFieldCampoApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 250, 140, -1));
+
+        jLabelAviso.setFont(new java.awt.Font("Abyssinica SIL", 2, 18)); // NOI18N
+        jLabelAviso.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelAviso.setText("Seleccione el archivo a leer:");
+        getContentPane().add(jLabelAviso, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, -1, 40));
+
+        jButtonSeleccion.setBackground(new java.awt.Color(0, 255, 204));
+        jButtonSeleccion.setFont(new java.awt.Font("Abyssinica SIL", 2, 18)); // NOI18N
+        jButtonSeleccion.setForeground(new java.awt.Color(0, 0, 0));
+        jButtonSeleccion.setText("Selección");
+        getContentPane().add(jButtonSeleccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 320, -1, -1));
+
+        jScrollPaneMostrarDatos.setBackground(new java.awt.Color(255, 255, 255));
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPaneMostrarDatos.setViewportView(jTextArea1);
+
+        getContentPane().add(jScrollPaneMostrarDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 380, -1, -1));
+
+        jButtonJugar.setBackground(new java.awt.Color(204, 0, 153));
+        jButtonJugar.setFont(new java.awt.Font("Abyssinica SIL", 2, 18)); // NOI18N
+        jButtonJugar.setForeground(new java.awt.Color(0, 0, 0));
+        jButtonJugar.setText("Jugar");
+        getContentPane().add(jButtonJugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 490, 130, -1));
 
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/jugar.jpg"))); // NOI18N
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 619));
@@ -137,13 +167,18 @@ public class Registro extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonJugar;
     private javax.swing.JButton jButtonRegresar;
+    private javax.swing.JButton jButtonSeleccion;
     private javax.swing.JLabel jLabelApellido;
+    private javax.swing.JLabel jLabelAviso;
     private javax.swing.JLabel jLabelFondo;
     private javax.swing.JLabel jLabelID;
     private javax.swing.JLabel jLabelNombre;
     private javax.swing.JLabel jLabelPartidasP;
     private javax.swing.JLabel jLabelTitulo;
+    private javax.swing.JScrollPane jScrollPaneMostrarDatos;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextFieldCampoApellido;
     private javax.swing.JTextField jTextFieldCampoID;
     private javax.swing.JTextField jTextFieldCampoNombre;

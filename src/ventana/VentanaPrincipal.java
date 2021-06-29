@@ -35,6 +35,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jButtonReportes = new javax.swing.JButton();
         jLabelDado = new javax.swing.JLabel();
         jButtonDado = new javax.swing.JButton();
+        jLabelTituloPrincipal = new javax.swing.JLabel();
         jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -89,6 +90,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButtonDado, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 210, 120, 110));
+
+        jLabelTituloPrincipal.setFont(new java.awt.Font("Abyssinica SIL", 2, 36)); // NOI18N
+        jLabelTituloPrincipal.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelTituloPrincipal.setText("Serpientes y escaleras");
+        getContentPane().add(jLabelTituloPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, -1, -1));
 
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.jpg"))); // NOI18N
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 930, -1));
@@ -171,6 +177,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton jButtonSalir;
     private javax.swing.JLabel jLabelDado;
     private javax.swing.JLabel jLabelFondo;
+    private javax.swing.JLabel jLabelTituloPrincipal;
     private javax.swing.JPanel jPanelFondoTablero;
     // End of variables declaration//GEN-END:variables
 }
