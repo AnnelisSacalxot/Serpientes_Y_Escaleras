@@ -5,6 +5,12 @@
  */
 package ventana;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author annelis
@@ -40,7 +46,7 @@ public class Registro extends javax.swing.JFrame {
         jLabelAviso = new javax.swing.JLabel();
         jButtonSeleccion = new javax.swing.JButton();
         jScrollPaneMostrarDatos = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jTextAreaArchivo = new javax.swing.JTextArea();
         jButtonJugar = new javax.swing.JButton();
         jLabelFondo = new javax.swing.JLabel();
 
@@ -101,21 +107,26 @@ public class Registro extends javax.swing.JFrame {
         jButtonSeleccion.setFont(new java.awt.Font("Abyssinica SIL", 2, 18)); // NOI18N
         jButtonSeleccion.setForeground(new java.awt.Color(0, 0, 0));
         jButtonSeleccion.setText("Selección");
+        jButtonSeleccion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSeleccionActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonSeleccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 320, -1, -1));
 
         jScrollPaneMostrarDatos.setBackground(new java.awt.Color(255, 255, 255));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPaneMostrarDatos.setViewportView(jTextArea1);
+        jTextAreaArchivo.setColumns(20);
+        jTextAreaArchivo.setRows(5);
+        jScrollPaneMostrarDatos.setViewportView(jTextAreaArchivo);
 
-        getContentPane().add(jScrollPaneMostrarDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 380, -1, -1));
+        getContentPane().add(jScrollPaneMostrarDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 380, 260, 110));
 
         jButtonJugar.setBackground(new java.awt.Color(204, 0, 153));
         jButtonJugar.setFont(new java.awt.Font("Abyssinica SIL", 2, 18)); // NOI18N
         jButtonJugar.setForeground(new java.awt.Color(0, 0, 0));
         jButtonJugar.setText("Jugar");
-        getContentPane().add(jButtonJugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 490, 130, -1));
+        getContentPane().add(jButtonJugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 500, 130, -1));
 
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/jugar.jpg"))); // NOI18N
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 619));
@@ -130,6 +141,43 @@ public class Registro extends javax.swing.JFrame {
         vistaPrincipal.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButtonRegresarActionPerformed
+
+    private void jButtonSeleccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSeleccionActionPerformed
+       /**
+     * Irá el método para que se pueda elegir el archivo, o sea que en este botón
+     * se seleccionara el directorio donde esta guardado
+     *abrira la carpeta principal de archivos...
+     */
+       
+       JFileChooser abrirDirectorio = new  JFileChooser();
+       abrirDirectorio.showOpenDialog(null);   //Esto nos sirve para no tener seleccionado ningun objeto
+       File sinErrores = abrirDirectorio.getSelectedFile();
+       
+       
+       //Hacemos un try-catch para evitar que nos de errores, por si se modifica o se borra 
+       //por alguna razón el archivo a leer
+       
+       try{
+           
+           FileReader leer = new FileReader(sinErrores);
+           BufferedReader memoriaArchivo = new BufferedReader(leer);
+           String texto = "";
+           String linea = "";
+           
+           //Este ciclo se usara para que cada linea que vaya recorriendo la vaya agregando
+           //a la variable texto, más un salto de línea
+           
+           while (((linea = memoriaArchivo.readLine())!= null)){ 
+               texto += linea +"\n";
+           }
+           
+           //Se mostrará en el área de texto la información del archivo
+           jTextAreaArchivo.setText(texto);
+           JOptionPane.showMessageDialog(null, "Archivo leído correctamente");
+       }  
+       catch(Exception e){ 
+       } 
+    }//GEN-LAST:event_jButtonSeleccionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -178,7 +226,7 @@ public class Registro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelPartidasP;
     private javax.swing.JLabel jLabelTitulo;
     private javax.swing.JScrollPane jScrollPaneMostrarDatos;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextAreaArchivo;
     private javax.swing.JTextField jTextFieldCampoApellido;
     private javax.swing.JTextField jTextFieldCampoID;
     private javax.swing.JTextField jTextFieldCampoNombre;
