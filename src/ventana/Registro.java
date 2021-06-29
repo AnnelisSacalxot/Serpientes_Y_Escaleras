@@ -5,6 +5,7 @@
  */
 package ventana;
 
+import Manejadores.CreacionTablero;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -126,6 +127,11 @@ public class Registro extends javax.swing.JFrame {
         jButtonJugar.setFont(new java.awt.Font("Abyssinica SIL", 2, 18)); // NOI18N
         jButtonJugar.setForeground(new java.awt.Color(0, 0, 0));
         jButtonJugar.setText("Jugar");
+        jButtonJugar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonJugarActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonJugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 500, 130, -1));
 
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/jugar.jpg"))); // NOI18N
@@ -178,6 +184,12 @@ public class Registro extends javax.swing.JFrame {
        catch(Exception e){ 
        } 
     }//GEN-LAST:event_jButtonSeleccionActionPerformed
+
+    private void jButtonJugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonJugarActionPerformed
+        // Una vez leído el archivo se llama al metodo apra crear el tablero
+        
+        CreacionTablero tablero = new CreacionTablero();
+    }//GEN-LAST:event_jButtonJugarActionPerformed
 
     /**
      * @param args the command line arguments

@@ -34,8 +34,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jButtonJugar = new javax.swing.JButton();
         jButtonReportes = new javax.swing.JButton();
         jLabelDado = new javax.swing.JLabel();
-        jButtonDado = new javax.swing.JButton();
         jLabelTituloPrincipal = new javax.swing.JLabel();
+        jButtonFichaAmarilla = new javax.swing.JButton();
+        jButtonFichaVerde = new javax.swing.JButton();
+        jButtonDado = new javax.swing.JButton();
+        jButtonFichaRojo = new javax.swing.JButton();
+        jButtonFichaAzul = new javax.swing.JButton();
         jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -81,7 +85,18 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabelDado.setFont(new java.awt.Font("Abyssinica SIL", 2, 18)); // NOI18N
         jLabelDado.setForeground(new java.awt.Color(0, 0, 0));
         jLabelDado.setText("Tirar el dado");
-        getContentPane().add(jLabelDado, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 160, 140, 30));
+        getContentPane().add(jLabelDado, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 140, 140, 30));
+
+        jLabelTituloPrincipal.setFont(new java.awt.Font("Abyssinica SIL", 2, 36)); // NOI18N
+        jLabelTituloPrincipal.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelTituloPrincipal.setText("Serpientes y escaleras");
+        getContentPane().add(jLabelTituloPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, -1, -1));
+
+        jButtonFichaAmarilla.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/amarillo.jpg"))); // NOI18N
+        getContentPane().add(jButtonFichaAmarilla, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 340, 70, 70));
+
+        jButtonFichaVerde.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/verde.jpg"))); // NOI18N
+        getContentPane().add(jButtonFichaVerde, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 340, 70, 70));
 
         jButtonDado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/dado.jpg"))); // NOI18N
         jButtonDado.addActionListener(new java.awt.event.ActionListener() {
@@ -89,12 +104,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 jButtonDadoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonDado, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 210, 120, 110));
+        getContentPane().add(jButtonDado, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 180, -1, -1));
 
-        jLabelTituloPrincipal.setFont(new java.awt.Font("Abyssinica SIL", 2, 36)); // NOI18N
-        jLabelTituloPrincipal.setForeground(new java.awt.Color(0, 0, 0));
-        jLabelTituloPrincipal.setText("Serpientes y escaleras");
-        getContentPane().add(jLabelTituloPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, -1, -1));
+        jButtonFichaRojo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/rojo.jpg"))); // NOI18N
+        getContentPane().add(jButtonFichaRojo, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 430, 70, 80));
+
+        jButtonFichaAzul.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/azul.jpg"))); // NOI18N
+        getContentPane().add(jButtonFichaAzul, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 430, 70, 80));
 
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.jpg"))); // NOI18N
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 930, -1));
@@ -172,6 +188,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonDado;
+    private javax.swing.JButton jButtonFichaAmarilla;
+    private javax.swing.JButton jButtonFichaAzul;
+    private javax.swing.JButton jButtonFichaRojo;
+    private javax.swing.JButton jButtonFichaVerde;
     private javax.swing.JButton jButtonJugar;
     private javax.swing.JButton jButtonReportes;
     private javax.swing.JButton jButtonSalir;
